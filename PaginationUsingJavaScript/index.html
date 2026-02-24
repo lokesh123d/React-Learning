@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination Java-Script</title>
+    <script src="script.js" defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            background-color: rgb(231, 174, 174);
+            min-height: 1300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+        }
+
+        .navbar {
+            font-size: 30px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background-color: aquamarine;
+            margin-top: 0;
+        }
+
+        .main li {
+            list-style-type: none;
+            background-color: skyblue;
+            padding: 30px;
+            font-size: 30px;
+            border-radius: 10px;
+            margin: 20px;
+            min-width: 800px;
+        }
+
+        .buttons button {
+            background-color: rgb(100, 172, 100);
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            color: white;
+        }
+
+        .buttons button:hover {
+            transform: scale(1.05);
+            background-color: rgb(64, 221, 64);
+        }
+
+        .buttons {
+            display: flex;
+            font-size: 40px;
+            justify-content: center;
+            gap: 20px;
+            align-items: center;
+        }
+        .search{
+            padding: 10px;
+        }
+        .searchInput{
+            padding: 7px;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <h1>Pagination</h1>
+        <div class="buttons">
+            <button class="prev">Previous</button>
+            <span class="pageNo"></span>
+            <button class="next">Next</button>
+        </div>
+       
+    </div>
+    <div class="search">
+     <input type="text" placeholder="Search Post By Title" class="searchInput">
+     <ul class="suggestion">
+
+     </ul>
+    </div>
+     <ul class="main">
+           
+
+
+    </ul>
+
+</body>
+
+</html>
