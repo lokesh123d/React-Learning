@@ -1,0 +1,31 @@
+table {
+    border: 1px solid blue;
+    border-radius: 9px;
+    text-align: center;
+}
+
+thead {
+    background-color: #2b80ff;
+    color: white;
+}
+
+tr,
+td,
+th {
+    border: 1px solid black;
+    padding: 5px 15px;
+    width: 200px;
+}
+
+tfoot {
+    font-weight: 700;
+    background-color: rgba(128, 128, 128, 0.311);
+}
+
+option{
+    color:black;
+    outline: none;
+}
+select{
+    outline: none;
+}
