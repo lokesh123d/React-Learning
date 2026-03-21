@@ -1,0 +1,23 @@
+.optInput{
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  font-size: 30px;
+  font-weight: 900;
+  padding-left: 20px;
+}
+.loginBtn{
+  background-color: rgb(50, 50, 229);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.loginBtn:hover{
+  background-color: blue;
+}
+
+.loginBtn:active{
+transform: scale(1.02);
+}
