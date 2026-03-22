@@ -13,7 +13,7 @@ const OtpSystem = ({ otpLength }) => {
     if (isNaN(value)) return;
     if (!value) return;
     let newData = [...otpData];
-    newData[index] = value;
+    newData[index] = value.slice(-1);
     setotpData(newData);
     inputRef.current[index + 1]?.focus();
   }

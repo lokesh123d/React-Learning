@@ -1,8 +1,11 @@
 import React from 'react'
+import Otp from './Otp'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <Otp otpLength={4}/>
+    </div>
   )
 }
 
