@@ -108,49 +108,68 @@ function firstNonRepeating(str) {
 }
 console.log(firstNonRepeating("aabbcdd"));
 
+// debounce function
 
+let input = document.querySelector("input");
+let searchInput = debounce(searchData, 2000);
 
-// debounce function 
+input.addEventListener("input", searchInput);
 
-let input = document.querySelector('input');
-let searchInput  = debounce(searchData,2000);
-
-input.addEventListener('input',searchInput)
-
-function searchData(query){
-    console.log(input.value);
+function searchData(query) {
+  console.log(input.value);
 }
 
-function debounce(fn,delay){
-    let timer;
-    return function(...args){
-        clearTimeout(timer);
-       timer = setTimeout(()=>{
-            fn(...args)
-        },delay)
-    }
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
 }
-
-
 
 // const obj = { a: { b: { c: 10 } } };
 // get(obj, "a.b.c") → 10
 // get(obj, "a.b.x") → undefined
 
-
-function get(obj,findVal){
-
-let path = findVal.split('.');
-let result = null;
-for(let i = 0;i<path.length;i++){
-if(obj.hasOwnProperty( path[i])){
-result = obj[path[i]]
-obj = result
-}else{
-    return ;
-}
-}
-return result
-
+function get(obj, findVal) {
+  let path = findVal.split(".");
+  let result = null;
+  for (let i = 0; i < path.length; i++) {
+    if (obj.hasOwnProperty(path[i])) {
+      result = obj[path[i]];
+      obj = result;
+    } else {
+      return;
+    }
+  }
+  return result;
 }
 console.log(get({ a: { b: { c: 10 } } }, "a.b.c"));
+
+// deep cloning wihtout some build in method or a feature we can do this
+
+function deepCloning(obj) {
+  let result = {};
+  for (let val in obj) {
+    if (typeof obj[val] == "object") {
+      result[val] = deepCloning(obj[val], result);
+    } else {
+      result[val] = obj[val];
+    }
+  }
+  return result;
+}
+
+let obj = {
+  name: "lokesh",
+  location: {
+    lat: 8937,
+    lng: 9879,
+    written: { written: "lokehs is live here" },
+  },
+  passion: "Frontend Web Developer",
+};
+
+let result = deepCloning(obj);
