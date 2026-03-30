@@ -1,0 +1,17 @@
+.traffic-light{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.red-light{
+  background-color: red;
+}
+
+.green-light{
+  background-color: green;
+}
+.yellow-light{
+  background-color: yellow;
+}
