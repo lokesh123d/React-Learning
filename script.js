@@ -117,3 +117,49 @@ function customDeepCloning(obj) {
   return result;
 }
 let deepcopy = customDeepCloning(obj);
+
+
+
+
+
+
+
+const pr1 = new Promise((res,rej)=>{
+setTimeout(()=>{
+  res('first promise resolved..')
+},1000)
+})
+
+const pr2 = new Promise((res,rej)=>{
+ setTimeout(()=>{
+   rej('second promise got rejected..')
+ res('second promise resolved..')
+ },2000)
+})
+  
+const pr3 = new Promise((res,rej)=>{
+  res('third promise resolved..')
+})
+
+
+
+async function LokeshKaPromiseAll(promises) {
+  const ans = [];
+
+  for (let pr of promises) {
+    try{
+
+      const result = await pr;
+      ans.push(result);
+    }
+    catch(err){
+      return err;
+    }
+    }
+
+  return ans;
+}
+
+LokeshKaPromiseAll([pr1, pr2, pr3])
+  .then(data => console.log(data)).catch((err)=>console.log(err.message))
+
