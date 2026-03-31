@@ -44,15 +44,76 @@
 
 // a settimeout usign the set tinterval
 
-handmadesettimeout(() => {
-  console.log("js");
-}, 2000);
+// handmadesettimeout(() => {
+//   console.log("js");
+// }, 2000);
 
-function handmadesettimeout(func, delay) {
-  let timerId = setInterval(() => {
-    do {
-      func();
-      clearInterval(timerId);
-    } while (false);
-  }, delay);
+// function handmadesettimeout(func, delay) {
+//   let timerId = setInterval(() => {
+//     do {
+//       func();
+//       clearInterval(timerId);
+//     } while (false);
+//   }, delay);
+// }
+
+// async function makePromiseAll([...promises]){
+// let ans = [];
+// promises.forEach(async (promise)=>{
+//   try{
+// const response = await promise;
+// ans.push(response);
+// }catch(err){
+// return err;
+//   }
+// })
+
+// return ans
+// }
+
+// let pr1 = new Promise((res,rej)=>{
+//   rej('hey');
+// })
+
+// let pr2 = new Promise((res,rej)=>{
+//   res('hey from 2');
+// })
+
+// let pr3 = new Promise((res,rej)=>{
+// setTimeout(()=>{
+//   res('hey from 3');
+
+// },2000)
+// })
+
+// console.log(makePromiseAll([pr1,pr2,pr3]));;
+
+let obj = {
+  name: "lokesh",
+  passion: "frontend development",
+  location: {
+    state: "uttarakhand",
+    district: "nainital",
+    village: "sunkity",
+    arr2: [2, 3, 4, 5],
+  },
+  arr: [1, 2, 3, 4, 6],
+};
+
+function customDeepCloning(obj) {
+  let result = {};
+  for (let key in obj) {
+    if (typeof obj[key] == "object") {
+      if (Array.isArray(obj[key])) {
+        result[key] = obj[key];
+      } else {
+        let newRes = customDeepCloning(obj[key]);
+        result[key] = newRes;
+      }
+    } else {
+      result[key] = obj[key];
+    }
+  }
+  return result;
 }
+let deepcopy = customDeepCloning(obj);
