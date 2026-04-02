@@ -1,0 +1,30 @@
+.suggestion-container{
+  background-color: white;
+  /* border: 1px solid black; */
+  width: 200px;
+  margin-top: 10px;
+  /* border-radius: 10px; */
+  max-height: 100px;
+  overflow-y: scroll;
+
+}
+/* .suggestion-container::-webkit-scrollbar{
+  width: 10px;
+  background-color:gray;
+  color: white;
+} */
+
+.suggestion{
+  /* background-color: white */
+  /* ; */
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  padding: 0 10px;
+  height: 20px;
+  width: 100%;
+}
+
+.highlight{
+  background-color: yellow;
+
+}
